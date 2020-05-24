@@ -203,7 +203,7 @@
       == DECLARATION ==
 
    The OnnxControl is a C# component that uses the onnx.proto3 and onnx-operators-proto3 
-   files made available at by the ONNX Project Contributors located at https://onnx.ai
+   files made available by the ONNX Project Contributors located at https://onnx.ai
    and distributed under the MIT License shown below and available at:
    https://github.com/onnx/onnx/blob/master/LICENSE
 
