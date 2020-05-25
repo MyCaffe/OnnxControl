@@ -141,6 +141,9 @@ namespace OnnxControl
             DequantizeLinear,
             Det,
             Div,
+            /// <summary>
+            /// @see [Dropout Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Dropout)
+            /// </summary>
             Dropout,
             Einsum,
             Elu,
@@ -156,7 +159,7 @@ namespace OnnxControl
             GatherElements,
             GatherND,
             /// <summary>
-            /// @see [ReLU Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Gemm)
+            /// @see [Gemm Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Gemm)
             /// </summary>
             Gemm,
             /// <summary>
@@ -176,6 +179,9 @@ namespace OnnxControl
             InstanceNormalization,
             IsInf,
             IsNan,
+            /// <summary>
+            /// @see [LRN Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#LRN)
+            /// </summary>
             LRN,
             LSTM,
             /// <summary>
@@ -209,7 +215,7 @@ namespace OnnxControl
             OneHot,
             Or,
             /// <summary>
-            /// @see [LeakyReLU Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#PRelu)
+            /// @see [PRelu Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#PRelu)
             /// </summary>
             PRelu,
             Pad,
@@ -234,9 +240,12 @@ namespace OnnxControl
             ReduceSum,
             ReduceSumSquare,
             /// <summary>
-            /// @see [ReLU Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Relu)
+            /// @see [Relu Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Relu)
             /// </summary>
             Relu,
+            /// <summary>
+            /// @see [Reshape Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Reshape)
+            /// </summary>
             Reshape,
             ReverseSequence,
             RoiAlign,
@@ -261,7 +270,7 @@ namespace OnnxControl
             Size,
             Slice,
             /// <summary>
-            /// @see [Conv Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Softmax)
+            /// @see [Softmax Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Softmax)
             /// </summary>
             Softmax,
             Softplus,
@@ -296,13 +305,16 @@ namespace OnnxControl
         {
             addOperator(OPERATORS.AveragePool, 11);
             addOperator(OPERATORS.Conv, 10);
+            addOperator(OPERATORS.Dropout, 12); // added
             addOperator(OPERATORS.Gemm, 11);
             addOperator(OPERATORS.GlobalAveragePool, 1);
             addOperator(OPERATORS.GlobalMaxPool, 9);
             addOperator(OPERATORS.LeakyRelu, 9);
+            addOperator(OPERATORS.LRN, 1); // added
             addOperator(OPERATORS.MaxPool, 12);
             addOperator(OPERATORS.PRelu, 9);
             addOperator(OPERATORS.Relu, 5);
+            addOperator(OPERATORS.Reshape, 5); // added
             addOperator(OPERATORS.Softmax, 11);
         }
 
@@ -332,7 +344,7 @@ namespace OnnxControl
         public string GetString(OPERATORS op)
         {
             if (!m_rgOperatorVersions.ContainsKey(op))
-                return null;
+                return op.ToString();
 
             return m_rgOperatorVersions[op].Item2;
         }
