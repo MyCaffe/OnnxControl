@@ -11,7 +11,7 @@ namespace OnnxControl
     /// </summary>
     public class OnnxDefinitions
     {
-        Dictionary<OPERATORS, int> m_rgOperatorVersions = new Dictionary<OPERATORS, int>();
+        Dictionary<OPERATORS, Tuple<int, string>> m_rgOperatorVersions = new Dictionary<OPERATORS, Tuple<int, string>>();
 
         /// <summary>
         /// Defines the ONNX basic data types as defined  by TensorProto on onnx.proto3.
@@ -294,7 +294,21 @@ namespace OnnxControl
         /// </summary>
         public OnnxDefinitions()
         {
+            addOperator(OPERATORS.AveragePool, 11);
+            addOperator(OPERATORS.Conv, 10);
+            addOperator(OPERATORS.Gemm, 11);
+            addOperator(OPERATORS.GlobalAveragePool, 1);
+            addOperator(OPERATORS.GlobalMaxPool, 9);
+            addOperator(OPERATORS.LeakyRelu, 9);
+            addOperator(OPERATORS.MaxPool, 12);
+            addOperator(OPERATORS.PRelu, 9);
+            addOperator(OPERATORS.Relu, 5);
+            addOperator(OPERATORS.Softmax, 11);
+        }
 
+        private void addOperator(OPERATORS op, int nVer)
+        {
+            m_rgOperatorVersions.Add(op, new Tuple<int, string>(nVer, op.ToString()));
         }
 
         /// <summary>
@@ -307,18 +321,20 @@ namespace OnnxControl
             if (!m_rgOperatorVersions.ContainsKey(op))
                 return -1;
 
-            m_rgOperatorVersions.Add(OPERATORS.AveragePool, 11);
-            m_rgOperatorVersions.Add(OPERATORS.Conv, 10);
-            m_rgOperatorVersions.Add(OPERATORS.Gemm, 11);
-            m_rgOperatorVersions.Add(OPERATORS.GlobalAveragePool, 1);
-            m_rgOperatorVersions.Add(OPERATORS.GlobalMaxPool, 9);
-            m_rgOperatorVersions.Add(OPERATORS.LeakyRelu, 9);
-            m_rgOperatorVersions.Add(OPERATORS.MaxPool, 12);
-            m_rgOperatorVersions.Add(OPERATORS.PRelu, 9);
-            m_rgOperatorVersions.Add(OPERATORS.Relu, 5);
-            m_rgOperatorVersions.Add(OPERATORS.Softmax, 11);
+            return m_rgOperatorVersions[op].Item1;
+        }
 
-            return m_rgOperatorVersions[op];
+        /// <summary>
+        /// Returns the string representation of the operator.
+        /// </summary>
+        /// <param name="op">Specifies the operator who's string to retrieve.</param>
+        /// <returns>The string representation of the operator used by ONNX is returned.</returns>
+        public string GetString(OPERATORS op)
+        {
+            if (!m_rgOperatorVersions.ContainsKey(op))
+                return null;
+
+            return m_rgOperatorVersions[op].Item2;
         }
     }
 }
