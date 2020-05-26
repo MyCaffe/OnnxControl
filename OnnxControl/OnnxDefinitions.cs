@@ -106,6 +106,9 @@ namespace OnnxControl
             Abs,
             Acos,
             Acosh,
+            /// <summary>
+            /// @see [Add Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Add)
+            /// </summary>
             Add,
             And,
             ArgMax,
@@ -118,12 +121,18 @@ namespace OnnxControl
             /// @see [AveragePool Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#AveragePool)
             /// </summary>
             AveragePool,
+            /// <summary>
+            /// @see [BatchNormalization Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#BatchNormalization)
+            /// </summary>
             BatchNormalization,
             BitShift,
             Cast,
             Ceil,
             Clip,
             Compress,
+            /// <summary>
+            /// @see [Concat Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Concat)
+            /// </summary>
             Concat,
             ConcatFromSequence,
             Constant,
@@ -152,6 +161,9 @@ namespace OnnxControl
             Exp,
             Expand,
             EyeLike,
+            /// <summary>
+            /// @see [Flatten Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Flatten)
+            /// </summary>
             Flatten,
             Floor,
             GRU,
@@ -196,6 +208,9 @@ namespace OnnxControl
             LpPool,
             MatMul,
             MatMulInteger,
+            /// <summary>
+            /// @see [Max Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Max)
+            /// </summary>
             Max,
             /// <summary>
             /// @see [MaxPool Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#MaxPool)
@@ -206,6 +221,9 @@ namespace OnnxControl
             Mean,
             Min,
             Mod,
+            /// <summary>
+            /// @see [Mul Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Mul)
+            /// </summary>
             Mul,
             Multinomial,
             Neg,
@@ -303,15 +321,21 @@ namespace OnnxControl
         /// </summary>
         public OnnxDefinitions()
         {
+            addOperator(OPERATORS.Add, 7); // added
             addOperator(OPERATORS.AveragePool, 11);
+            addOperator(OPERATORS.BatchNormalization, 9); // added
+            addOperator(OPERATORS.Concat, 11); // added
             addOperator(OPERATORS.Conv, 10);
             addOperator(OPERATORS.Dropout, 12); // added
+            addOperator(OPERATORS.Flatten, 11); // added
             addOperator(OPERATORS.Gemm, 11);
             addOperator(OPERATORS.GlobalAveragePool, 1);
             addOperator(OPERATORS.GlobalMaxPool, 9);
             addOperator(OPERATORS.LeakyRelu, 9);
             addOperator(OPERATORS.LRN, 1); // added
+            addOperator(OPERATORS.Max, 12); // added
             addOperator(OPERATORS.MaxPool, 12);
+            addOperator(OPERATORS.Mul, 7); // added
             addOperator(OPERATORS.PRelu, 9);
             addOperator(OPERATORS.Relu, 5);
             addOperator(OPERATORS.Reshape, 5); // added
