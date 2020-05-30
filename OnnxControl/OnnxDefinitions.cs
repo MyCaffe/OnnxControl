@@ -294,6 +294,9 @@ namespace OnnxControl
             Softplus,
             Softsign,
             SpaceToDepth,
+            /// <summary>
+            /// @see [Split Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Split)
+            /// </summary>
             Split,
             SplitToSequence,
             Sqrt,
@@ -340,6 +343,7 @@ namespace OnnxControl
             addOperator(OPERATORS.Relu, 5);
             addOperator(OPERATORS.Reshape, 5); // added
             addOperator(OPERATORS.Softmax, 11);
+            addOperator(OPERATORS.Split, 11); // added
         }
 
         private void addOperator(OPERATORS op, int nVer)
