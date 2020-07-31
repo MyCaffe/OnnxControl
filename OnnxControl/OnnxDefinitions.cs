@@ -103,6 +103,9 @@ namespace OnnxControl
 #pragma warning disable 1591
         public enum OPERATORS
         {
+            /// <summary>
+            /// @see [Abs Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Abs)
+            /// </summary>
             Abs,
             Acos,
             Acosh,
@@ -111,6 +114,9 @@ namespace OnnxControl
             /// </summary>
             Add,
             And,
+            /// <summary>
+            /// @see [ArgMax Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ArgMax)
+            /// </summary>
             ArgMax,
             ArgMin,
             Asin,
@@ -128,6 +134,9 @@ namespace OnnxControl
             BitShift,
             Cast,
             Ceil,
+            /// <summary>
+            /// @see [Clip Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Clip)
+            /// </summary>
             Clip,
             Compress,
             /// <summary>
@@ -155,9 +164,15 @@ namespace OnnxControl
             /// </summary>
             Dropout,
             Einsum,
+            /// <summary>
+            /// @see [Elu Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Elu)
+            /// </summary>
             Elu,
             Equal,
             Erf,
+            /// <summary>
+            /// @see [Exp Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Exp)
+            /// </summary>
             Exp,
             Expand,
             EyeLike,
@@ -195,12 +210,18 @@ namespace OnnxControl
             /// @see [LRN Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#LRN)
             /// </summary>
             LRN,
+            /// <summary>
+            /// @see [LSTM Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#LSTM)
+            /// </summary>
             LSTM,
             /// <summary>
             /// @see [LeakyReLU Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#LeakyRelu)
             /// </summary>
             LeakyRelu,
             Less,
+            /// <summary>
+            /// @see [Log Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Log)
+            /// </summary>
             Log,
             LogSoftmax,
             Loop,
@@ -230,6 +251,9 @@ namespace OnnxControl
             NonMaxSuppression,
             NonZero,
             Not,
+            /// <summary>
+            /// @see [OneHot Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#OneHot)
+            /// </summary>
             OneHot,
             Or,
             /// <summary>
@@ -237,10 +261,16 @@ namespace OnnxControl
             /// </summary>
             PRelu,
             Pad,
+            /// <summary>
+            /// @see [Pow Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Pow)
+            /// </summary>
             Pow,
             QLinearConv,
             QLinearMatMul,
             QuantizeLinear,
+            /// <summary>
+            /// @see [RNN Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#RNN)
+            /// </summary>
             RNN,
             RandomNormal,
             RandomNormalLike,
@@ -251,11 +281,20 @@ namespace OnnxControl
             ReduceL2,
             ReduceLogSum,
             ReduceLogSumExp,
+            /// <summary>
+            /// @see [ReduceMax Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ReduceMax)
+            /// </summary>
             ReduceMax,
             ReduceMean,
             ReduceMin,
             ReduceProd,
+            /// <summary>
+            /// @see [ReduceSum Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ReduceSum)
+            /// </summary>
             ReduceSum,
+            /// <summary>
+            /// @see [ReduceSumSquare Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ReduceSumSquare)
+            /// </summary>
             ReduceSumSquare,
             /// <summary>
             /// @see [Relu Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Relu)
@@ -281,11 +320,17 @@ namespace OnnxControl
             SequenceLength,
             Shape,
             Shrink,
+            /// <summary>
+            /// @see [Sigmoid Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Sigmoid)
+            /// </summary>
             Sigmoid,
             Sign,
             Sin,
             Sinh,
             Size,
+            /// <summary>
+            /// @see [Slice Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Slice)
+            /// </summary>
             Slice,
             /// <summary>
             /// @see [Softmax Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Softmax)
@@ -303,11 +348,20 @@ namespace OnnxControl
             Squeeze,
             StringNormalizer,
             Sub,
+            /// <summary>
+            /// @see [Sum Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Sum)
+            /// </summary>
             Sum,
             Tan,
+            /// <summary>
+            /// @see [Tanh Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Tanh)
+            /// </summary>
             Tanh,
             TfldfVectorizer,
             ThresholdRelu,
+            /// <summary>
+            /// @see [Tile Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Tile)
+            /// </summary>
             Tile,
             TopK,
             Transpose,
@@ -324,26 +378,44 @@ namespace OnnxControl
         /// </summary>
         public OnnxDefinitions()
         {
-            addOperator(OPERATORS.Add, 7); // added
+            addOperator(OPERATORS.Abs, 13);
+            addOperator(OPERATORS.Add, 7);
+            addOperator(OPERATORS.ArgMax, 13);
             addOperator(OPERATORS.AveragePool, 11);
-            addOperator(OPERATORS.BatchNormalization, 9); // added
-            addOperator(OPERATORS.Concat, 11); // added
+            addOperator(OPERATORS.BatchNormalization, 9);
+            addOperator(OPERATORS.Clip, 13);
+            addOperator(OPERATORS.Concat, 11); 
             addOperator(OPERATORS.Conv, 10);
-            addOperator(OPERATORS.Dropout, 12); // added
-            addOperator(OPERATORS.Flatten, 11); // added
+            addOperator(OPERATORS.Dropout, 12);
+            addOperator(OPERATORS.Elu, 6);
+            addOperator(OPERATORS.Exp, 13);
+            addOperator(OPERATORS.Flatten, 11); 
             addOperator(OPERATORS.Gemm, 11);
             addOperator(OPERATORS.GlobalAveragePool, 1);
             addOperator(OPERATORS.GlobalMaxPool, 9);
             addOperator(OPERATORS.LeakyRelu, 9);
-            addOperator(OPERATORS.LRN, 1); // added
-            addOperator(OPERATORS.Max, 12); // added
+            addOperator(OPERATORS.LRN, 1);
+            addOperator(OPERATORS.LSTM, 7);
+            addOperator(OPERATORS.Log, 13);
+            addOperator(OPERATORS.Max, 12); 
             addOperator(OPERATORS.MaxPool, 12);
-            addOperator(OPERATORS.Mul, 7); // added
+            addOperator(OPERATORS.Mul, 7);
+            addOperator(OPERATORS.OneHot, 11);
+            addOperator(OPERATORS.Pow, 13);
             addOperator(OPERATORS.PRelu, 9);
             addOperator(OPERATORS.Relu, 5);
-            addOperator(OPERATORS.Reshape, 5); // added
+            addOperator(OPERATORS.Reshape, 5);
+            addOperator(OPERATORS.RNN, 7);
+            addOperator(OPERATORS.ReduceMax, 13);
+            addOperator(OPERATORS.ReduceSum, 13);
+            addOperator(OPERATORS.ReduceSumSquare, 13);
+            addOperator(OPERATORS.Sigmoid, 13);
+            addOperator(OPERATORS.Slice, 13);
             addOperator(OPERATORS.Softmax, 11);
-            addOperator(OPERATORS.Split, 11); // added
+            addOperator(OPERATORS.Split, 11);
+            addOperator(OPERATORS.Sum, 13);
+            addOperator(OPERATORS.Tanh, 13);
+            addOperator(OPERATORS.Tile, 13);
         }
 
         private void addOperator(OPERATORS op, int nVer)
