@@ -289,7 +289,13 @@ namespace OnnxControl
             /// </summary>
             ReduceMax,
             ReduceMean,
+            /// <summary>
+            /// @see [ReduceMin Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ReduceMin)
+            /// </summary>
             ReduceMin,
+            /// <summary>
+            /// @see [ReduceProd Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ReduceProd)
+            /// </summary>
             ReduceProd,
             /// <summary>
             /// @see [ReduceSum Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ReduceSum)
@@ -411,6 +417,8 @@ namespace OnnxControl
             addOperator(OPERATORS.Reshape, 5);
             addOperator(OPERATORS.RNN, 7);
             addOperator(OPERATORS.ReduceMax, 13);
+            addOperator(OPERATORS.ReduceMin, 13);
+            addOperator(OPERATORS.ReduceProd, 13);
             addOperator(OPERATORS.ReduceSum, 13);
             addOperator(OPERATORS.ReduceSumSquare, 13);
             addOperator(OPERATORS.Sigmoid, 13);
