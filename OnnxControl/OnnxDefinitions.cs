@@ -118,6 +118,9 @@ namespace OnnxControl
             /// @see [ArgMax Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ArgMax)
             /// </summary>
             ArgMax,
+            /// <summary>
+            /// @see [ArgMin Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ArgMin)
+            /// </summary>
             ArgMin,
             Asin,
             Asinh,
@@ -381,6 +384,7 @@ namespace OnnxControl
             addOperator(OPERATORS.Abs, 13);
             addOperator(OPERATORS.Add, 7);
             addOperator(OPERATORS.ArgMax, 13);
+            addOperator(OPERATORS.ArgMin, 13);
             addOperator(OPERATORS.AveragePool, 11);
             addOperator(OPERATORS.BatchNormalization, 9);
             addOperator(OPERATORS.Clip, 13);
