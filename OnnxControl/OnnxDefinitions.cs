@@ -107,7 +107,13 @@ namespace OnnxControl
             /// @see [Abs Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Abs)
             /// </summary>
             Abs,
+            /// <summary>
+            /// @see [Acos Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Acos)
+            /// </summary>
             Acos,
+            /// <summary>
+            /// @see [Acosh Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Acosh)
+            /// </summary>
             Acosh,
             /// <summary>
             /// @see [Add Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Add)
@@ -122,9 +128,21 @@ namespace OnnxControl
             /// @see [ArgMin Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ArgMin)
             /// </summary>
             ArgMin,
+            /// <summary>
+            /// @see [Asin Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Asin)
+            /// </summary>
             Asin,
+            /// <summary>
+            /// @see [Asinh Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Asinh)
+            /// </summary>
             Asinh,
+            /// <summary>
+            /// @see [Atan Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Atan)
+            /// </summary>
             Atan,
+            /// <summary>
+            /// @see [Atanh Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Atanh)
+            /// </summary>
             Atanh,
             /// <summary>
             /// @see [AveragePool Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#AveragePool)
@@ -155,7 +173,13 @@ namespace OnnxControl
             Conv,
             ConvInteger,
             ConvTranspose,
+            /// <summary>
+            /// @see [Cos Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Cos)
+            /// </summary>
             Cos,
+            /// <summary>
+            /// @see [Cosh Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Cosh)
+            /// </summary>
             Cosh,
             CumSum,
             DepthToSpace,
@@ -243,6 +267,9 @@ namespace OnnxControl
             MaxRoiPool,
             MaxUnpool,
             Mean,
+            /// <summary>
+            /// @see [Min Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Min)
+            /// </summary>
             Min,
             Mod,
             /// <summary>
@@ -334,7 +361,13 @@ namespace OnnxControl
             /// </summary>
             Sigmoid,
             Sign,
+            /// <summary>
+            /// @see [Sin Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Sin)
+            /// </summary>
             Sin,
+            /// <summary>
+            /// @see [Sinh Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Sinh)
+            /// </summary>
             Sinh,
             Size,
             /// <summary>
@@ -388,14 +421,22 @@ namespace OnnxControl
         public OnnxDefinitions()
         {
             addOperator(OPERATORS.Abs, 13);
+            addOperator(OPERATORS.Acos, 7);
+            addOperator(OPERATORS.Acosh, 9);
             addOperator(OPERATORS.Add, 7);
             addOperator(OPERATORS.ArgMax, 13);
             addOperator(OPERATORS.ArgMin, 13);
+            addOperator(OPERATORS.Asin, 7);
+            addOperator(OPERATORS.Asinh, 9);
+            addOperator(OPERATORS.Atan, 7);
+            addOperator(OPERATORS.Atanh, 9);
             addOperator(OPERATORS.AveragePool, 11);
             addOperator(OPERATORS.BatchNormalization, 9);
             addOperator(OPERATORS.Clip, 13);
             addOperator(OPERATORS.Concat, 11); 
             addOperator(OPERATORS.Conv, 10);
+            addOperator(OPERATORS.Cos, 7);
+            addOperator(OPERATORS.Cosh, 9);
             addOperator(OPERATORS.Dropout, 12);
             addOperator(OPERATORS.Elu, 6);
             addOperator(OPERATORS.Exp, 13);
@@ -407,7 +448,8 @@ namespace OnnxControl
             addOperator(OPERATORS.LRN, 1);
             addOperator(OPERATORS.LSTM, 7);
             addOperator(OPERATORS.Log, 13);
-            addOperator(OPERATORS.Max, 12); 
+            addOperator(OPERATORS.Max, 13);
+            addOperator(OPERATORS.Min, 13);
             addOperator(OPERATORS.MaxPool, 12);
             addOperator(OPERATORS.Mul, 7);
             addOperator(OPERATORS.OneHot, 11);
@@ -422,10 +464,13 @@ namespace OnnxControl
             addOperator(OPERATORS.ReduceSum, 13);
             addOperator(OPERATORS.ReduceSumSquare, 13);
             addOperator(OPERATORS.Sigmoid, 13);
+            addOperator(OPERATORS.Sin, 7);
+            addOperator(OPERATORS.Sinh, 9);
             addOperator(OPERATORS.Slice, 13);
             addOperator(OPERATORS.Softmax, 11);
             addOperator(OPERATORS.Split, 11);
             addOperator(OPERATORS.Sum, 13);
+            addOperator(OPERATORS.Tan, 7);
             addOperator(OPERATORS.Tanh, 13);
             addOperator(OPERATORS.Tile, 13);
         }
