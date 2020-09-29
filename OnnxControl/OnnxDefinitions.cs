@@ -154,6 +154,9 @@ namespace OnnxControl
             BatchNormalization,
             BitShift,
             Cast,
+            /// <summary>
+            /// @see [Ceil Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Ceil)
+            /// </summary>
             Ceil,
             /// <summary>
             /// @see [Clip Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Clip)
@@ -207,6 +210,9 @@ namespace OnnxControl
             /// @see [Flatten Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Flatten)
             /// </summary>
             Flatten,
+            /// <summary>
+            /// @see [Floor Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Floor)
+            /// </summary>
             Floor,
             GRU,
             Gather,
@@ -277,6 +283,9 @@ namespace OnnxControl
             /// </summary>
             Mul,
             Multinomial,
+            /// <summary>
+            /// @see [Neg Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Meg)
+            /// </summary>
             Neg,
             NonMaxSuppression,
             NonZero,
@@ -360,6 +369,9 @@ namespace OnnxControl
             /// @see [Sigmoid Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Sigmoid)
             /// </summary>
             Sigmoid,
+            /// <summary>
+            /// @see [Sign Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Sign)
+            /// </summary>
             Sign,
             /// <summary>
             /// @see [Sin Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Sin)
@@ -389,6 +401,9 @@ namespace OnnxControl
             Sqrt,
             Squeeze,
             StringNormalizer,
+            /// <summary>
+            /// @see [Sub Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Sub)
+            /// </summary>
             Sub,
             /// <summary>
             /// @see [Sum Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Sum)
@@ -432,6 +447,7 @@ namespace OnnxControl
             addOperator(OPERATORS.Atanh, 9);
             addOperator(OPERATORS.AveragePool, 11);
             addOperator(OPERATORS.BatchNormalization, 9);
+            addOperator(OPERATORS.Ceil, 13);
             addOperator(OPERATORS.Clip, 13);
             addOperator(OPERATORS.Concat, 11); 
             addOperator(OPERATORS.Conv, 10);
@@ -440,7 +456,8 @@ namespace OnnxControl
             addOperator(OPERATORS.Dropout, 12);
             addOperator(OPERATORS.Elu, 6);
             addOperator(OPERATORS.Exp, 13);
-            addOperator(OPERATORS.Flatten, 11); 
+            addOperator(OPERATORS.Flatten, 11);
+            addOperator(OPERATORS.Floor, 13);
             addOperator(OPERATORS.Gemm, 11);
             addOperator(OPERATORS.GlobalAveragePool, 1);
             addOperator(OPERATORS.GlobalMaxPool, 9);
@@ -452,6 +469,7 @@ namespace OnnxControl
             addOperator(OPERATORS.Min, 13);
             addOperator(OPERATORS.MaxPool, 12);
             addOperator(OPERATORS.Mul, 7);
+            addOperator(OPERATORS.Neg, 13);
             addOperator(OPERATORS.OneHot, 11);
             addOperator(OPERATORS.Pow, 13);
             addOperator(OPERATORS.PRelu, 9);
@@ -466,9 +484,11 @@ namespace OnnxControl
             addOperator(OPERATORS.Sigmoid, 13);
             addOperator(OPERATORS.Sin, 7);
             addOperator(OPERATORS.Sinh, 9);
+            addOperator(OPERATORS.Sign, 9);
             addOperator(OPERATORS.Slice, 13);
             addOperator(OPERATORS.Softmax, 11);
             addOperator(OPERATORS.Split, 11);
+            addOperator(OPERATORS.Sub, 13);
             addOperator(OPERATORS.Sum, 13);
             addOperator(OPERATORS.Tan, 7);
             addOperator(OPERATORS.Tanh, 13);
