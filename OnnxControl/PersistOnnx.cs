@@ -34,7 +34,7 @@ namespace OnnxControl
         /// </summary>
         public string LatestSupportedVersion
         {
-            get { return "1.7"; }
+            get { return "1.8"; }
         }
 
         /// <summary>
