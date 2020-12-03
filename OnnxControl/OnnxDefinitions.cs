@@ -215,6 +215,9 @@ namespace OnnxControl
             /// </summary>
             Floor,
             GRU,
+            /// <summary>
+            /// @see [Floor Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Gather)
+            /// </summary>
             Gather,
             GatherElements,
             GatherND,
@@ -421,6 +424,9 @@ namespace OnnxControl
             /// </summary>
             Tile,
             TopK,
+            /// <summary>
+            /// @see [Floor Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Transpose)
+            /// </summary>
             Transpose,
             Unique,
             Unsqueeze,
@@ -458,6 +464,7 @@ namespace OnnxControl
             addOperator(OPERATORS.Exp, 13);
             addOperator(OPERATORS.Flatten, 11);
             addOperator(OPERATORS.Floor, 13);
+            addOperator(OPERATORS.Gather, 13);
             addOperator(OPERATORS.Gemm, 11);
             addOperator(OPERATORS.GlobalAveragePool, 1);
             addOperator(OPERATORS.GlobalMaxPool, 9);
@@ -493,6 +500,7 @@ namespace OnnxControl
             addOperator(OPERATORS.Tan, 7);
             addOperator(OPERATORS.Tanh, 13);
             addOperator(OPERATORS.Tile, 13);
+            addOperator(OPERATORS.Transpose, 13);
         }
 
         private void addOperator(OPERATORS op, int nVer)
