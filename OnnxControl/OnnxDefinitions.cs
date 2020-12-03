@@ -216,7 +216,7 @@ namespace OnnxControl
             Floor,
             GRU,
             /// <summary>
-            /// @see [Floor Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Gather)
+            /// @see [Gather Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Gather)
             /// </summary>
             Gather,
             GatherElements,
@@ -402,6 +402,9 @@ namespace OnnxControl
             Split,
             SplitToSequence,
             Sqrt,
+            /// <summary>
+            /// @see [Squeeze Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Squeeze)
+            /// </summary>
             Squeeze,
             StringNormalizer,
             /// <summary>
@@ -425,10 +428,13 @@ namespace OnnxControl
             Tile,
             TopK,
             /// <summary>
-            /// @see [Floor Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Transpose)
+            /// @see [Transpose Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Transpose)
             /// </summary>
             Transpose,
             Unique,
+            /// <summary>
+            /// @see [Unsqueeze Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Unsqueeze)
+            /// </summary>
             Unsqueeze,
             Upsample,
             Where,
@@ -495,12 +501,14 @@ namespace OnnxControl
             addOperator(OPERATORS.Slice, 13);
             addOperator(OPERATORS.Softmax, 11);
             addOperator(OPERATORS.Split, 11);
+            addOperator(OPERATORS.Squeeze, 13);
             addOperator(OPERATORS.Sub, 13);
             addOperator(OPERATORS.Sum, 13);
             addOperator(OPERATORS.Tan, 7);
             addOperator(OPERATORS.Tanh, 13);
             addOperator(OPERATORS.Tile, 13);
             addOperator(OPERATORS.Transpose, 13);
+            addOperator(OPERATORS.Unsqueeze, 13);
         }
 
         private void addOperator(OPERATORS op, int nVer)
