@@ -168,7 +168,13 @@ namespace OnnxControl
             /// </summary>
             Concat,
             ConcatFromSequence,
+            /// <summary>
+            /// @see [Constant Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Constant)
+            /// </summary>
             Constant,
+            /// <summary>
+            /// @see [ConstantOfShape Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ConstantOfShape)
+            /// </summary>
             ConstantOfShape,
             /// <summary>
             /// @see [Conv Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#Conv)
@@ -327,6 +333,9 @@ namespace OnnxControl
             /// @see [ReduceMax Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ReduceMax)
             /// </summary>
             ReduceMax,
+            /// <summary>
+            /// @see [ReduceMean Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ReduceMean)
+            /// </summary>
             ReduceMean,
             /// <summary>
             /// @see [ReduceMin Operator](https://github.com/onnx/onnx/blob/master/docs/Operators.md#ReduceMin)
@@ -459,6 +468,8 @@ namespace OnnxControl
             addOperator(OPERATORS.Atanh, 9);
             addOperator(OPERATORS.AveragePool, 11);
             addOperator(OPERATORS.BatchNormalization, 9);
+            addOperator(OPERATORS.Constant, 13);
+            addOperator(OPERATORS.ConstantOfShape, 9);
             addOperator(OPERATORS.Ceil, 13);
             addOperator(OPERATORS.Clip, 13);
             addOperator(OPERATORS.Concat, 11); 
