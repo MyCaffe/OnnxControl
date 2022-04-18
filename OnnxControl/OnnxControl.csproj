@@ -83,10 +83,10 @@
     <None Include="app.config" />
     <None Include="onnxcontrol.pfx" />
     <None Include="packages.config" />
+    <None Include="proto\onnx-operators.proto3" />
+    <None Include="proto\onnx.proto3" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="proto\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>if not exist $(ProjectDir)protoCode md $(ProjectDir)protoCode
