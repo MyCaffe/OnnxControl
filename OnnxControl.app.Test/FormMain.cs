@@ -33,18 +33,42 @@ namespace OnnxControl.app.Test
             }
         }
 
-        private void btnLoadMnist_Click(object sender, EventArgs e)
+        private void btnLoadInceptionV1(object sender, EventArgs e)
         {
             PersistOnnx persist = new PersistOnnx();
 
-            string strTestPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\MyCaffe\\test_data\\models\\onnx";
+            string strTestPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\MyCaffe\\test_data\\models\\onnx_b";
             if (!Directory.Exists(strTestPath))
                 Directory.CreateDirectory(strTestPath);
 
-            string strModelFileBig = strTestPath + "\\bvlcalexnet-9.onnx";
-            //string strDownloadPathBig = "https://github.com/onnx/models/blob/main/vision/classification/alexnet/model/bvlcalexnet-9.onnx";
-            string strModelFileSmall = strTestPath + "\\mnist-1.onnx";
-            string strDownloadPathSmall = "https://github.com/onnx/models/blob/main/vision/classification/mnist/model/mnist-1.onnx";
+            string strModelFileSmall = strTestPath + "\\inception-v1-9.onnx";
+            string strDownloadPathSmall = "https://github.com/onnx/models/raw/main/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-9.onnx";
+            string strDownloadPath = strDownloadPathSmall;
+            string strModelFile = strModelFileSmall;
+
+            getModelFile(strDownloadPath, strModelFile);
+
+            ModelProto model = persist.Load(strModelFile);
+
+            Trace.WriteLine("Loaded model file '" + strModelFile + "'...");
+            Trace.WriteLine("Version = " + model.IrVersion.ToString());
+            Trace.WriteLine("Producer Name = " + model.ProducerName);
+            Trace.WriteLine("Producer Version = " + model.ProducerVersion);
+            Trace.WriteLine("Model Version = " + model.ModelVersion.ToString());
+            Trace.WriteLine("Description = " + model.DocString);
+            Trace.WriteLine("Domain = " + model.Domain);
+        }
+
+        private void btnLoadInceptionV2(object sender, EventArgs e)
+        {
+            PersistOnnx persist = new PersistOnnx();
+
+            string strTestPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\MyCaffe\\test_data\\models\\onnx_b";
+            if (!Directory.Exists(strTestPath))
+                Directory.CreateDirectory(strTestPath);
+
+            string strModelFileSmall = strTestPath + "\\inception-v2-9.onnx";
+            string strDownloadPathSmall = "https://github.com/onnx/models/raw/main/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-9.onnx";
             string strDownloadPath = strDownloadPathSmall;
             string strModelFile = strModelFileSmall;
 
