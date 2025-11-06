@@ -89,8 +89,13 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>if not exist $(ProjectDir)protoCode md $(ProjectDir)protoCode
+<<<<<<< HEAD
 $(SolutionDir)packages\Google.Protobuf.Tools.3.33.0\tools\windows_x64\protoc -I=$(ProjectDir)proto --csharp_out=$(ProjectDir)protoCode $(ProjectDir)proto\onnx.proto3
 $(SolutionDir)packages\Google.Protobuf.Tools.3.33.0\tools\windows_x64\protoc -I=$(ProjectDir)proto --csharp_out=$(ProjectDir)protoCode $(ProjectDir)proto\onnx-operators.proto3
+=======
+$(SolutionDir)packages\Google.Protobuf.Tools.3.32.1\tools\windows_x64\protoc -I=$(ProjectDir)proto --csharp_out=$(ProjectDir)protoCode $(ProjectDir)proto\onnx.proto3
+$(SolutionDir)packages\Google.Protobuf.Tools.3.32.1\tools\windows_x64\protoc -I=$(ProjectDir)proto --csharp_out=$(ProjectDir)protoCode $(ProjectDir)proto\onnx-operators.proto3
+>>>>>>> c69f58b682e522638fd3f5adf418ed2894efdb3b
 </PreBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Google.Protobuf.Tools.3.33.0\build\Google.Protobuf.Tools.targets" Condition="Exists('..\packages\Google.Protobuf.Tools.3.33.0\build\Google.Protobuf.Tools.targets')" />
