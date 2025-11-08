@@ -16,6 +16,7 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -29,6 +30,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <NoWarn>1587</NoWarn>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -40,12 +42,14 @@
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <NoWarn>1587</NoWarn>
   </PropertyGroup>
+
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>onnxcontrol.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="Google.Protobuf, Version=3.33.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.33.0\lib\net45\Google.Protobuf.dll</HintPath>
@@ -72,6 +76,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="OnnxDefinitions.cs" />
     <Compile Include="PersistOnnx.cs" />
@@ -79,6 +84,7 @@
     <Compile Include="protoCode\Onnx.cs" />
     <Compile Include="protoCode\OnnxOperators.cs" />
   </ItemGroup>
+
   <ItemGroup>
     <None Include="app.config" />
     <None Include="onnxcontrol.pfx" />
@@ -86,19 +92,20 @@
     <None Include="proto\onnx-operators.proto3" />
     <None Include="proto\onnx.proto3" />
   </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+  <!-- Clean, resolved PreBuildEvent using Google.Protobuf.Tools 3.33.0 -->
   <PropertyGroup>
-    <PreBuildEvent>if not exist $(ProjectDir)protoCode md $(ProjectDir)protoCode
-<<<<<<< HEAD
-$(SolutionDir)packages\Google.Protobuf.Tools.3.33.0\tools\windows_x64\protoc -I=$(ProjectDir)proto --csharp_out=$(ProjectDir)protoCode $(ProjectDir)proto\onnx.proto3
-$(SolutionDir)packages\Google.Protobuf.Tools.3.33.0\tools\windows_x64\protoc -I=$(ProjectDir)proto --csharp_out=$(ProjectDir)protoCode $(ProjectDir)proto\onnx-operators.proto3
-=======
-$(SolutionDir)packages\Google.Protobuf.Tools.3.32.1\tools\windows_x64\protoc -I=$(ProjectDir)proto --csharp_out=$(ProjectDir)protoCode $(ProjectDir)proto\onnx.proto3
-$(SolutionDir)packages\Google.Protobuf.Tools.3.32.1\tools\windows_x64\protoc -I=$(ProjectDir)proto --csharp_out=$(ProjectDir)protoCode $(ProjectDir)proto\onnx-operators.proto3
->>>>>>> c69f58b682e522638fd3f5adf418ed2894efdb3b
-</PreBuildEvent>
+    <PreBuildEvent>
+if not exist "$(ProjectDir)protoCode" md "$(ProjectDir)protoCode"
+"$(SolutionDir)packages\Google.Protobuf.Tools.3.33.0\tools\windows_x64\protoc.exe" -I="$(ProjectDir)proto" --csharp_out="$(ProjectDir)protoCode" "$(ProjectDir)proto\onnx.proto3"
+"$(SolutionDir)packages\Google.Protobuf.Tools.3.33.0\tools\windows_x64\protoc.exe" -I="$(ProjectDir)proto" --csharp_out="$(ProjectDir)protoCode" "$(ProjectDir)proto\onnx-operators.proto3"
+    </PreBuildEvent>
   </PropertyGroup>
+
   <Import Project="..\packages\Google.Protobuf.Tools.3.33.0\build\Google.Protobuf.Tools.targets" Condition="Exists('..\packages\Google.Protobuf.Tools.3.33.0\build\Google.Protobuf.Tools.targets')" />
+
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
